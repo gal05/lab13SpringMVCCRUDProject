@@ -18,19 +18,24 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public Employee find(int employee_id) throws DAOException, EmptyResultException {
-		
+
 		Employee emp = employeeDAO.findEmployee(employee_id);
 
 		return emp;
 	}
 
 	@Override
-	public List<Employee> findAll()
-			throws DAOException, EmptyResultException {
-		
+	public List<Employee> findAll() throws DAOException, EmptyResultException {
+
 		List<Employee> emps = employeeDAO.findAllEmployees();
-	
+
 		return emps;
 	}
 
+	@Override
+	public void update(String login, String password, String lastname, String firstname, int salary, int dptId)
+			throws DAOException {
+
+		employeeDAO.update(login, password, lastname, firstname, salary, dptId);
+	}
 }
