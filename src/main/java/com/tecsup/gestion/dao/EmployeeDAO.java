@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.tecsup.gestion.exception.DAOException;
 import com.tecsup.gestion.exception.EmptyResultException;
+import com.tecsup.gestion.exception.LoginException;
 import com.tecsup.gestion.model.Employee;
 
 public interface EmployeeDAO {
@@ -21,5 +22,7 @@ public interface EmployeeDAO {
 	List<Employee> findAllEmployees() throws DAOException, EmptyResultException;
 
 	List<Employee> findEmployeesByName(String name) throws DAOException, EmptyResultException;
+
+	Employee validate(String idEmployee, String clave) throws LoginException, DAOException;
 
 }

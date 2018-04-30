@@ -3,6 +3,7 @@ package com.tecsup.gestion.dao;
 import static org.junit.Assert.fail;
 
 import java.util.List;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -16,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
+
 import com.tecsup.gestion.exception.DAOException;
 import com.tecsup.gestion.exception.EmptyResultException;
 import com.tecsup.gestion.model.Employee;
@@ -30,17 +32,18 @@ public class EmployeeDAOTest {
 	@Autowired
 	private EmployeeDAO employeeDAO;
 
-
+	
 	@BeforeClass
 	public static void beforeClass() {
 		logger.info("Antes de todos los metodos");
+
 	}
 	
 	@Before
 	public  void before() {
 		logger.info("Antes de cada metodo");
 	}
-
+	
 	@Test
 	public void testFindEmployeeById() {
 
@@ -73,7 +76,7 @@ public class EmployeeDAOTest {
 			//
 			List<Employee> emps = employeeDAO.findAllEmployees();
 
-			// Assert.assertEquals(emps.size(), 1);
+			//Assert.assertEquals(emps.size(), 4);
 
 			logger.info(emps.toString());
 
@@ -83,6 +86,7 @@ public class EmployeeDAOTest {
 			fail(e.getMessage());
 		}
 
+		
 	}
 
 	@Test
@@ -98,6 +102,7 @@ public class EmployeeDAOTest {
 			Assert.assertEquals(2505, emp.getSalary());
 
 			logger.info(emp.toString());
+			
 		} catch (EmptyResultException e) {
 			fail(e.getMessage());
 		} catch (DAOException e) {
@@ -109,8 +114,10 @@ public class EmployeeDAOTest {
 	@Test
 	public void testCreateEmployee() {
 
+		logger.info("--");
+		
 		String LOGIN = "aromero" + (int) (Math.random() * 100);
-		logger.info(LOGIN);
+		//logger.info(LOGIN);
 		String PWD = "123";
 		String FIRSTNAME = "Alberto";
 		String LASTNAME = "Romero";
@@ -210,7 +217,7 @@ public class EmployeeDAOTest {
 		}
 
 	}
-
+	
 	@After
 	public void after() {
 		logger.info("Despues de cada metodo");
@@ -220,5 +227,4 @@ public class EmployeeDAOTest {
 	public static void afterClass() {
 		logger.info("Despues de todos los metodos");
 	}
-
 }
