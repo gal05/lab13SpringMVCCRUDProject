@@ -1,4 +1,4 @@
-package com.tecsup.gestion.controller;
+package com.tecsup.guerra_alvarado.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.tecsup.gestion.exception.DAOException;
-import com.tecsup.gestion.exception.LoginException;
-import com.tecsup.gestion.model.Employee;
-import com.tecsup.gestion.services.SecurityService;
+import com.tecsup.guerra_alvarado.exception.DAOException;
+import com.tecsup.guerra_alvarado.exception.LoginException;
+import com.tecsup.guerra_alvarado.model.Employee;
+import com.tecsup.guerra_alvarado.services.SecurityService;
 
 
 /**

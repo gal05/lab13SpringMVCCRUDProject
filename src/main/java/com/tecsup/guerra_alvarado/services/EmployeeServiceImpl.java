@@ -1,14 +1,14 @@
-package com.tecsup.gestion.services;
+package com.tecsup.guerra_alvarado.services;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.tecsup.gestion.dao.EmployeeDAO;
-import com.tecsup.gestion.exception.DAOException;
-import com.tecsup.gestion.exception.EmptyResultException;
-import com.tecsup.gestion.model.Employee;
+import com.tecsup.guerra_alvarado.dao.EmployeeDAO;
+import com.tecsup.guerra_alvarado.exception.DAOException;
+import com.tecsup.guerra_alvarado.exception.EmptyResultException;
+import com.tecsup.guerra_alvarado.model.Employee;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {

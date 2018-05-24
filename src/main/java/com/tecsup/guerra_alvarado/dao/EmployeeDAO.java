@@ -1,11 +1,11 @@
-package com.tecsup.gestion.dao;
+package com.tecsup.guerra_alvarado.dao;
 
 import java.util.List;
 
-import com.tecsup.gestion.exception.DAOException;
-import com.tecsup.gestion.exception.EmptyResultException;
-import com.tecsup.gestion.exception.LoginException;
-import com.tecsup.gestion.model.Employee;
+import com.tecsup.guerra_alvarado.exception.DAOException;
+import com.tecsup.guerra_alvarado.exception.EmptyResultException;
+import com.tecsup.guerra_alvarado.exception.LoginException;
+import com.tecsup.guerra_alvarado.model.Employee;
 
 public interface EmployeeDAO {
 

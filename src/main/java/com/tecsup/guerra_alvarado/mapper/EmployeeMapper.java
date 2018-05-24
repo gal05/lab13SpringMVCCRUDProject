@@ -1,11 +1,11 @@
-package com.tecsup.gestion.mapper;
+package com.tecsup.guerra_alvarado.mapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import com.tecsup.gestion.model.Employee;
+import com.tecsup.guerra_alvarado.model.Employee;
 
 public class EmployeeMapper implements RowMapper<Employee>{
 

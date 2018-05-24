@@ -1,4 +1,4 @@
-package com.tecsup.gestion.model;
+package com.tecsup.guerra_alvarado.model;
 
 public class Employee {
 

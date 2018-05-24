@@ -18,9 +18,10 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
-import com.tecsup.gestion.exception.DAOException;
-import com.tecsup.gestion.exception.EmptyResultException;
-import com.tecsup.gestion.model.Employee;
+import com.tecsup.guerra_alvarado.dao.EmployeeDAO;
+import com.tecsup.guerra_alvarado.exception.DAOException;
+import com.tecsup.guerra_alvarado.exception.EmptyResultException;
+import com.tecsup.guerra_alvarado.model.Employee;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml")

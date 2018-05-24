@@ -1,4 +1,4 @@
-package com.tecsup.gestion.exception;
+package com.tecsup.guerra_alvarado.exception;
 
 public class DAOException extends Exception {
 

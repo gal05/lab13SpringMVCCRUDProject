@@ -1,4 +1,4 @@
-package com.tecsup.gestion.dao.jdbc;
+package com.tecsup.guerra_alvarado.dao.jdbc;
 
 import java.util.List;
 
@@ -9,12 +9,12 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.tecsup.gestion.dao.EmployeeDAO;
-import com.tecsup.gestion.exception.DAOException;
-import com.tecsup.gestion.exception.EmptyResultException;
-import com.tecsup.gestion.exception.LoginException;
-import com.tecsup.gestion.mapper.EmployeeMapper;
-import com.tecsup.gestion.model.Employee;
+import com.tecsup.guerra_alvarado.dao.EmployeeDAO;
+import com.tecsup.guerra_alvarado.exception.DAOException;
+import com.tecsup.guerra_alvarado.exception.EmptyResultException;
+import com.tecsup.guerra_alvarado.exception.LoginException;
+import com.tecsup.guerra_alvarado.mapper.EmployeeMapper;
+import com.tecsup.guerra_alvarado.model.Employee;
 
 @Repository
 public class EmployeeDAOImpl implements EmployeeDAO {

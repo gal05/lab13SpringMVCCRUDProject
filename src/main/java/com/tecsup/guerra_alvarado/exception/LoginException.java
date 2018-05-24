@@ -1,13 +1,13 @@
-package com.tecsup.gestion.exception;
+package com.tecsup.guerra_alvarado.exception;
 
-public class EmptyResultException extends Exception {
+public class LoginException extends Exception {
 
-	public EmptyResultException(String string) {
+	public LoginException(String string) {
 		// TODO Auto-generated constructor stub
 		super(string);
 	}
 
-	public EmptyResultException() {
+	public LoginException() {
 		// TODO Auto-generated constructor stub
 	}
 
