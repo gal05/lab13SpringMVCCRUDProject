@@ -50,13 +50,13 @@ public class CustomersDAOlmpl implements CustomersDAO {
 
 	@Override
 	public List<Customers> findAllCustomers() throws DAOException, EmptyResultException {
-		String query = "SELECT employee_id, login, password, first_name, last_name, salary, department_id FROM employees ";
+		String query = "Select id,companyName,contactname,contactTitle,address,city from customers";
 
 		try {
 
-			List<Customers> employees = jdbcTemplate.query(query, new CustomersMapper());
+			List<Customers> customers = jdbcTemplate.query(query, new CustomersMapper());
 			//
-			return employees;
+			return customers;
 
 		} catch (EmptyResultDataAccessException e) {
 			throw new EmptyResultException();

@@ -14,7 +14,7 @@ public class CustomersMapper implements RowMapper<Customers>{
 		Customers cus=new Customers();
 		cus.setId(rs.getInt("id"));
 		cus.setCompanyName(rs.getString("companyName"));
-		cus.setContactName(rs.getString("setContactName"));
+		cus.setContactName(rs.getString("contactName"));
 		cus.setContactTitle(rs.getString("contactTitle"));
 		cus.setAddress(rs.getString("address"));
 		cus.setCity(rs.getString("city"));
