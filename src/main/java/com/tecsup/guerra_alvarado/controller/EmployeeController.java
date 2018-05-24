@@ -26,7 +26,7 @@ public class EmployeeController {
 	private EmployeeService employeeService;
 	
 	
-	@GetMapping("/admin/menu")
+	@GetMapping("/admin/menu") 
 	public String menu() {
 
 		return "/admin/menu";
