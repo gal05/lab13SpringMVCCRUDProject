@@ -50,12 +50,12 @@
 								<td>${cus.city}</td>
 
 								<td><a
-									href="<%=request.getContextPath()%>/admin/emp/editform/${cus.id}"
+									href="<%=request.getContextPath()%>/admin/emp/updateform/${cus.id}"
 									class="btn btn-info btn-xs"> <i
 										class="glyphicon glyphicon-check"></i>Edit
 								</a></td>
 								<td><a
-									href="<%=request.getContextPath()%>/admin/emp/deleteform/${cus.id}"
+									href="<%=request.getContextPath()%>/admin/emp/updateform/${cus.id}"
 									class="btn btn-danger btn-xs"> <i
 										class="glyphicon glyphicon-trash"></i> Delete
 								</a></td>

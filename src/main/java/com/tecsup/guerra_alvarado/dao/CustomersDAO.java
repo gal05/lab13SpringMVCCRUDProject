@@ -19,7 +19,7 @@ public interface CustomersDAO {
 
 	void update(String companyName, String contactName, String contactTitle, String address, String city,int id) throws DAOException;
 
-	//Customers findCustomersById(int id) throws DAOException, EmptyResultException;
+	Customers findCustomersById(int id) throws DAOException, EmptyResultException;
 
 	List<Customers> findAllCustomers() throws DAOException, EmptyResultException;
 

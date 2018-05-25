@@ -33,7 +33,7 @@ public class CustomersDAOlmpl implements CustomersDAO {
 			throws DAOException {
 		
 		String query="insert into customers (companyName,contactName,contactTitle,address,city) values (?,?,?,?,?)";
-		Object[] params = new Object[] { companyName, contactName, contactTitle, address, city, };
+		Object[] params = new Object[] { companyName, contactName, contactTitle, address, city };
 		
 		Customers customers=null;
 		
@@ -70,8 +70,20 @@ public class CustomersDAOlmpl implements CustomersDAO {
 	@Override
 	public void update(String companyName, String contactName, String contactTitle, String address, String city, int id)
 			throws DAOException {
-		// TODO Auto-generated method stub
+		String query="update customers set companyName=?,contactName=?,contactTitle=?,address=?,city=? where id=?";
+		Object[] params = new Object[] { companyName, contactName, contactTitle, address, city, id};
 		
+		
+		try {
+			// create
+			jdbcTemplate.update(query, params);
+			// search
+			
+
+		} catch (Exception e) {
+			logger.info("Update_Error: " + e.getMessage());
+			throw new DAOException(e.getMessage());
+		}
 	}
 
 	@Override
@@ -90,6 +102,25 @@ public class CustomersDAOlmpl implements CustomersDAO {
 			logger.info("Error: " + e.getMessage());
 			throw new DAOException(e.getMessage());
 		}
+	}
+
+	@Override
+	public Customers findCustomersById(int id) throws DAOException, EmptyResultException {
+		String query = "Select id,companyName,contactName,contactTitle,address,city from customers where id =?";
+		Object[] params = new Object[] { id };
+		try {
+
+			Customers customers = jdbcTemplate.queryForObject(query,params, new CustomersMapper());
+			//
+			return customers;
+
+		} catch (EmptyResultDataAccessException e) {
+			throw new EmptyResultException();
+		} catch (Exception e) {
+			logger.info("Error: " + e.getMessage());
+			throw new DAOException(e.getMessage());
+		}
+
 	}
 
 }

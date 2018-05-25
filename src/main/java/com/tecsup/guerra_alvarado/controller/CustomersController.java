@@ -121,8 +121,54 @@ public class CustomersController {
 	 
 	 
 	 
-	 
-	 
-	 
-	 
+	 /**
+	  * Update
+	  */
+		@RequestMapping(value="admin/emp/updateform/{id}",method = RequestMethod.GET)
+		public String updateCustomers(@PathVariable int id, ModelMap model) {
+			
+			Customers customers = null;
+			boolean ja = false;
+			try {
+				  customers=customersService.finById(id);
+				  System.out.println("Update find funciona : "+customers.toString());
+			
+			} catch (Exception e) {
+				logger.info(e.getMessage());
+				model.addAttribute("message", "Error al borrar");
+				
+			} 
+			model.addAttribute("customer", customers);
+			return "admin/customer/custFormUpdate";
+		}
+	  
+		
+		 @RequestMapping(value="admin/emp/updateform/updateCustomer/kek",method = RequestMethod.POST)
+		    public ModelAndView  processUpdate(@ModelAttribute("customer") Customers customers,
+		    		ModelMap model) {
+		       
+			 
+			 	ModelAndView modelAndView = null;
+		        // implement your own registration logic here...
+		        try {
+					customersService.update(customers);
+				} catch (DAOException e) {
+					
+					e.printStackTrace();
+				} catch (EmptyResultException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} 
+			 	
+		        // probando la llegada de datos :v 
+		        System.out.println("username: " + customers.getCompanyName());
+		        System.out.println("password: " + customers.getContactName());
+		        System.out.println("email: " + customers.getContactTitle());
+		        System.out.println("birth date: " + customers.getAddress());
+		        System.out.println("profession: " + customers.getCity());
+		        
+		       
+				model.addAttribute("message", "Update DONE!");
+				return modelAndView = new ModelAndView("redirect: /guerra_alvarado/admin/customers/listCust");
+		    }
 }

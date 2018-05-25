@@ -34,7 +34,20 @@ public class CustomersServiceImpl  implements CustomersService{
 	@Override
 	public boolean borrar(int id) throws DAOException, EmptyResultException {
 		customersDao.delete(id);
-		return false;
+		return true;
+	}
+
+	@Override
+	public boolean update(Customers customers) throws DAOException, EmptyResultException {
+		customersDao.update(customers.getCompanyName(),customers.getContactName(),customers.getContactTitle(),customers.getAddress(),customers.getCity(), customers.getId());
+		return true;
+	}
+
+	@Override
+	public Customers finById(int id) throws DAOException, EmptyResultException {
+		Customers customers=customersDao.findCustomersById(id);
+		
+		return customers;
 	}
 
 }

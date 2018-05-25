@@ -70,7 +70,7 @@ public class EmployeeController {
 	
 	
 	
-	@GetMapping("/admin/emp/{action}/{employee_id}")
+	/*@GetMapping("/admin/emp/{action}/{employee_id}")
 	public ModelAndView form(@PathVariable String action, @PathVariable int employee_id, ModelMap model) {
 
 		// action = {"editform","deleteform"}
@@ -87,7 +87,7 @@ public class EmployeeController {
 		}
 
 		return modelAndView;
-	}
+	}*/
 	
 	
 	@PostMapping("/admin/emp/editsave")
@@ -110,4 +110,11 @@ public class EmployeeController {
 
 		return modelAndView;
 	}
+	
+	
+	
+	
+	
+	
+	
 }
