@@ -9,4 +9,12 @@ import com.tecsup.guerra_alvarado.model.Customers;
 
 public interface CustomersService {
 	List<Customers> findAll() throws DAOException, EmptyResultException;
+	
+	
+	
+	boolean crear( Customers customers) throws DAOException, EmptyResultException;
 }
+
+
+
+

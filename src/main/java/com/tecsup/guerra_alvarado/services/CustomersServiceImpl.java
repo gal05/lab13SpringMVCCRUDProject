@@ -23,4 +23,12 @@ public class CustomersServiceImpl  implements CustomersService{
 		return cus;
 	}
 
+	@Override
+	public boolean crear(Customers customers) throws DAOException, EmptyResultException {
+		
+		customersDao.create(customers.getCompanyName(),customers.getContactName(),customers.getContactTitle(),customers.getAddress(),customers.getCity());
+		
+		return true;
+	}
+
 }

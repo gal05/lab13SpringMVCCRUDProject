@@ -31,7 +31,22 @@ public class CustomersDAOlmpl implements CustomersDAO {
 	@Override
 	public void create(String companyName, String contactName, String contactTitle, String address, String city)
 			throws DAOException {
-		// TODO Auto-generated method stub
+		
+		String query="insert into customers (companyName,contactName,contactTitle,address,city) values (?,?,?,?,?)";
+		Object[] params = new Object[] { companyName, contactName, contactTitle, address, city, };
+		
+		Customers customers=null;
+		
+		try {
+			// create
+			jdbcTemplate.update(query, params);
+			// search
+			
+
+		} catch (Exception e) {
+			logger.info("Error: " + e.getMessage());
+			throw new DAOException(e.getMessage());
+		}
 		
 	}
 

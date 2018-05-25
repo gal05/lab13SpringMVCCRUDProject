@@ -63,9 +63,9 @@
 						</c:forEach>
 					</tbody>
 				</table>
-				<br /> <a href="<%=request.getContextPath()%>/admin/emp/createform"
+				<br /> <a href="<%=request.getContextPath()%>/createformcus"
 					class="btn btn-success"><i class="glyphicon glyphicon-edit"></i>
-					Create Employee</a>
+					Create Customers</a>
 					<a href="<%=request.getContextPath()%>/admin/menu"
 					class="btn btn-primary"><i class="glyphicon glyphicon-edit"></i>
 					Menu</a>
