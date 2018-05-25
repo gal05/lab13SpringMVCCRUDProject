@@ -51,8 +51,19 @@ public class CustomersDAOlmpl implements CustomersDAO {
 	}
 
 	@Override
-	public void delete(String login) throws DAOException {
-		// TODO Auto-generated method stub
+	public void delete(int id) throws DAOException,EmptyResultException {
+		try {
+			
+			String query="delete from customers where id="+id+"";
+		
+		 jdbcTemplate.update(query);
+			
+		} catch (EmptyResultDataAccessException e) {
+			throw new EmptyResultException();
+		} catch (Exception e) {
+			logger.info("Error Impl: " + e.getMessage());
+			throw new DAOException(e.getMessage());
+		}	
 		
 	}
 

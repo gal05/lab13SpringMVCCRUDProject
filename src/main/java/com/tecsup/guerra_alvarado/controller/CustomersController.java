@@ -12,10 +12,12 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
 
 import com.tecsup.guerra_alvarado.exception.DAOException;
 import com.tecsup.guerra_alvarado.exception.EmptyResultException;
@@ -47,6 +49,12 @@ public class CustomersController {
 	}
 
 
+	/**
+	 * 
+	 * @param model
+	 * @return
+	 * Metodo mostrar formularion para crear customers
+	 */
 	@RequestMapping(value="/createformcus",method = RequestMethod.GET)
 	public String showFormNewCustomers (Model model) {
 		Customers customers=new Customers();
@@ -54,7 +62,12 @@ public class CustomersController {
 			return "admin/customer/custForm";
 	}
 	
-
+/**
+ * 
+ * @param customers
+ * @param model
+ * @return metodo para hacer efectivo el registro del customerss
+ */
 	
 	 @RequestMapping(value="/createCustomer",method = RequestMethod.POST)
 	    public ModelAndView  processRegistration(@ModelAttribute("customersForm") Customers customers,
@@ -73,7 +86,7 @@ public class CustomersController {
 				e.printStackTrace();
 			} 
 		 	
-	        // for testing purpose:
+	        // probando la llegada de datos :v 
 	        System.out.println("username: " + customers.getCompanyName());
 	        System.out.println("password: " + customers.getContactName());
 	        System.out.println("email: " + customers.getContactTitle());
@@ -86,4 +99,30 @@ public class CustomersController {
 	    }
 	
 
+	 /**
+	  * Metodo para borrar
+	  */
+	 
+		@RequestMapping("admin/emp/deleteform/{id}")
+		public ModelAndView delete(@PathVariable int id, ModelMap model) {
+			
+			Customers customers = null;
+			boolean ja = false;
+			try {
+				  customersService.borrar(id);
+			} catch (Exception e) {
+				logger.info(e.getMessage());
+				model.addAttribute("message", "Error al borrar");
+				
+			} 
+
+			return new ModelAndView("redirect: /guerra_alvarado/admin/customers/listCust","command",customers);  
+		}
+	 
+	 
+	 
+	 
+	 
+	 
+	 
 }

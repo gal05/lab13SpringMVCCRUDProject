@@ -31,4 +31,10 @@ public class CustomersServiceImpl  implements CustomersService{
 		return true;
 	}
 
+	@Override
+	public boolean borrar(int id) throws DAOException, EmptyResultException {
+		customersDao.delete(id);
+		return false;
+	}
+
 }

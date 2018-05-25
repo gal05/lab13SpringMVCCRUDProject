@@ -13,6 +13,8 @@ public interface CustomersService {
 	
 	
 	boolean crear( Customers customers) throws DAOException, EmptyResultException;
+	
+	boolean borrar( int id) throws DAOException, EmptyResultException;
 }
 
 

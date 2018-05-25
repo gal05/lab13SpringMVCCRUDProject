@@ -15,7 +15,7 @@ public interface CustomersDAO {
 
 	void create(String companyName, String contactName, String contactTitle, String address, String city) throws DAOException;
 
-	void delete(String login) throws DAOException;
+	void delete(int id) throws DAOException,EmptyResultException;;
 
 	void update(String companyName, String contactName, String contactTitle, String address, String city,int id) throws DAOException;
 
